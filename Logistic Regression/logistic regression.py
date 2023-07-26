@@ -39,7 +39,7 @@ if __name__ == "__main__":
     X_train = np.array([[1.0, 2.0], [2.0, 3.0], [3.0, 4.0], [4.0, 5.0], [5.0, 6.0]])
     y_train = np.array([0, 0, 1, 1, 1])
 
-    X_test = np.array([[6.0, 7.0], [7.0, 8.0]])
+    X_test = np.array([[8.0, 9.0], [7.0, 8.0]])
 
     # Create and train the logistic regression model
     lr_model = LogisticRegression()
