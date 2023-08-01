@@ -11,7 +11,7 @@ class LogisticRegression(nn.Module):
     def forward(self, x):
         return torch.sigmoid(self.linear(x))
     
-    def fit(self, X_train, y_train, num_epochs=1000, lr=0.01):
+    def fit(self, X_train, y_train, num_epochs=10000, lr=0.01):
         criterion = nn.BCELoss()
         optimizer = optim.SGD(self.parameters(), lr=lr)
 
