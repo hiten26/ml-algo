@@ -9,7 +9,7 @@ st.title("Text-to-Speech App")
 processor = AutoProcessor.from_pretrained("suno/bark")
 model = BarkModel.from_pretrained("suno/bark")
 
-text_input = st.text_area("Enter the text:", "Hi, My name is Hitendra and I am a data scientist with 7 years of experience in ML/AI")
+text_input = st.text_area("Enter the text:", "Hi, My name is Hitendra and I love playing Table Tennis.")
 preset = st.selectbox("Select a voice preset:", ["v2/en_speaker_9", "v2/en_speaker_0"])
 
 if st.button("Generate Audio"):
