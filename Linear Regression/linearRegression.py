@@ -31,16 +31,24 @@ class LinearRegression:
 
 if __name__ == "__main__":
 
-    # Sample data for demonstration
-    X = np.array([[1], [2], [3], [4], [5]])  # Input features (e.g., the x values)
-    y = np.array([2, 4, 5, 4, 5])            # Target values (e.g., the corresponding y values)
+    # Generate random data
+    np.random.seed(0)
+    num_samples = 10000
+    X = np.random.rand(num_samples, 3)  # Random values for x1, x2, and x3
+    coefficients_true = np.array([2, 9, 13])  # True coefficients
+    y_true = np.dot(X, coefficients_true) + 1.5  # Calculate y using true coefficients
+    noise = np.random.normal(0, 0.1, num_samples)  # Add some noise
+    y = y_true + noise  # Observed y with noise
+
 
     # Create and train the linear regression model
-    model = LinearRegression(learning_rate=0.01, epochs=1000)
+    model = LinearRegression(learning_rate=0.01, epochs=100000)
     model.fit(X, y)
 
     # Make predictions
-    test_X = np.array([[6], [7]])
+    test_X = np.array([[6, 18, 11], [7, 12, 7]])
     predictions = model.predict(test_X)
 
     print("Predictions:", predictions)
+    print("Estimated Coefficients:", model.weights)
+    print("Intercept:", model.bias)
